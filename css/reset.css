@@ -1,0 +1,229 @@
+@charset "UTF-8";
+/*-----------------------------------------------------
+w3 decoration styles for screen media
+Used by: most w3 web pages
+$Id: screen.css,v 1.22.2.11 2005/03/15 18:48:56 ejp Exp $
+-----------------------------------------------------*/
+/* ------- basic styles ------- */
+html,body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  font-size: 84%;
+/*background: #f8f8f8;*/;
+}
+
+html,body,
+p,ul,ol,li,
+td,th,dl,dt,
+blockquote,
+h1,h2,h3,h4,h5 {
+  color: #000;
+  font-family: verdana,arial,helvetica,sans-serif;
+  list-style: none;
+  margin: 0;
+}
+
+p,li,dd,dt,th,td,
+blockquote, pre, code, xmp,
+#left-nav,
+#related-links, #link-list {
+  font-size: 1em;
+}
+
+pre, code, xmp {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+* html pre {
+  margin: 0;
+  font-size: 1em;
+}
+
+* html code {
+  margin: 0;
+  font-size: 1em;
+}
+
+* html xmp {
+  margin: 0;
+  font-size: 1em;
+}
+
+p {
+  margin: 0;
+  padding: .5em 0 .5em 0;
+  line-height: 1.25em;
+}
+
+.first {
+  padding: 0 0 .5em 0;
+}
+
+ul, ol, li {
+  margin-top: .5em;
+  margin-bottom: .5em;
+  padding-right: 1em;
+  line-height: 1.25em;
+}
+
+dl {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+dt {
+  margin: .5em 1em .3em 0;
+  line-height: 1.25em;
+  font-weight: bold;
+}
+
+dd {
+  margin: 0 1em .5em 2em;
+  line-height: 1.25em;
+}
+
+a {
+  text-decoration: none;
+  color: #1e74a8;
+}
+
+a img {
+  border: 0 solid #f00;
+}
+
+a:hover {
+  color: #69c;
+  text-decoration: underline;
+}
+
+.clear {
+  clear: both;
+  line-height: 0;
+  height: 0;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.block {
+  display: block;
+}
+
+/* ------- header treatments ------- */
+h1,h2,h3,h4,h5,h6,
+.sub-title,.sub-head {
+  margin: 0;
+  padding: 0;
+}
+
+.sub-title {
+  color: #666;
+  padding: 0 0 1.5em 0;
+  font-weight: bold;
+}
+
+.sub-head {
+  color: #666;
+  padding: .3em 0 .5em 0;
+}
+
+.kicker {
+  font-size: .9em;
+  color: #666;
+  padding: 0;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 1.9em;
+  font-weight: normal;
+  color: #000;
+}
+
+h2 {
+  font-size: 1.6em;
+  font-weight: normal;
+}
+
+#content-main h2 {
+  margin-top: .5em;
+}
+
+/* ------- form element treatments ------- */
+form {
+  margin: 0;
+  padding: 0;
+}
+/*select,input  {display:inline;}*/
+select {
+  display: inline;
+}
+
+select,input,textarea {
+  font-family: verdana;
+  font-size: .9em;
+}
+
+#content-sidebar select {
+  margin: 0;
+  padding: 0;
+  width: 70%;
+}
+
+input[type="text"] ,select,textarea {
+  border: 1px solid #d2d2d0;
+  border-radius: 0px;
+  padding: 3px;
+    /*width: 100%;*/;
+}
+
+* html #content-sidebar select {
+  width: 120px;
+  width: 70%;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.clearfix {
+  display: inline-block;
+}
+
+/* start commented backslash hack \*/
+* html .clearfix {
+  height: 1%;
+}
+
+.clearfix {
+  display: block;
+}
+
+/* close commented backslash hack */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+* html .clearfix {
+  zoom: 1;
+} /* IE6 */
+*:first-child+html .clearfix {
+  zoom: 1;
+} /* IE7 */

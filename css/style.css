@@ -1,0 +1,46 @@
+#wrapper{
+  width: 40%;
+  margin: 20px auto;
+}
+input[type="text"].searchtext{
+  width: 100%;
+  margin: 0 auto;
+  padding: 2px 0;
+  border-radius: 5px;
+  height: 35px;
+  font-size: 17px;
+}
+h1{
+  text-align: center;
+  padding: 10px 0;
+  border: 2px solid #ddd;
+  margin: 20px 0;
+}
+ul.DynaminUl{
+  margin: 0px;
+  padding: 0px;
+}
+.DynaminUl li{
+  margin: 10px 0;
+  padding: 5px 10px;
+  border:1px solid #000;
+  background: #ddd;
+  border-radius: 5px;
+  width: 100%;
+
+}
+.DynaminUl li span{
+  font-size: 15px;
+  position: relative;
+  top: -5px;
+  margin-left: 10px;
+}
+
+
+@media only screen and (min-width : 320px) and (max-width : 767px) {
+
+  #wrapper{
+    width: 98%;
+  }
+
+}

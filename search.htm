@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+          <head>
+            <!-- Meta, title, CSS, favicons, etc. -->
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <meta name="viewport" content="initial-scale=1, maximum-scale=1"/>
+            <title></title>
+
+            <!-- Favicons -->
+           <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+           <link rel="icon" href="/favicon.ico">
+
+            <!-- CSS Styles -->
+            <link href="css/reset.css" rel="stylesheet" type="text/css">
+            <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+            <link href="css/grid.css" rel="stylesheet" type="text/css">
+            <link href="css/style.css" rel="stylesheet" type="text/css">
+            <!-- Java Script -->
+            <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+            <script  type="text/javascript"  src="js/jquery-ui.js"></script>
+
+            <link rel="stylesheet" href="css/jquery-ui.css">
+            <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+            <!--[if lt IE 9]>
+              <script type="text/javascript" src="js/html5.js"></script>
+            <![endif]-->
+
+
+            <script>
+                  $(function() {
+                    function log( message ) {
+                      //var fullDate = new Date()
+                      var dNow = new Date();
+      var utcdate= (dNow.getFullYear()) + '-' + dNow.getMonth() + '-' + dNow.getDate() + ' '+ dNow.getHours() + ':' + dNow.getMinutes();
+                      $( "#DynaminUl" ).append("<li><i class='fa fa-check-circle fa-3x'></i><span>"+message+" - "+utcdate+"</span></li>")
+                    }
+
+                    $( "#city" ).autocomplete({
+                      minLength: 1,
+                      source: function( request, response ) {
+
+                        $.ajax({
+                          url: "http://gd.geobytes.com/AutoCompleteCity",
+                          dataType: "jsonp",
+                          data: {
+                            q: request.term
+                          },
+                          success: function( data ) {
+                            response( data );
+                          }
+                        });
+                      },
+
+                      select: function( event, ui ) {                     
+                        log( ui.item ?  ui.item.label : "Nothing selected, input was " + this.value);
+                      },
+                    });
+                  });
+                  </script>
+          </head>
+          <body>
+            <div id="wrapper">
+                <div class="col-1-1">
+                    <h1>
+                        Some Search App
+                    </h1>
+                    <div>
+                        <input type="text" class="searchtext" id="city">
+                    </div>
+                    <ul id="DynaminUl" class="DynaminUl"></ul>
+                </div>
+            </div>
+          </body>
+        </html>
